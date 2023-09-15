@@ -1,0 +1,8 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: demoapp-pipeline
+spec:
+  tasks:
+    - name: init
+
