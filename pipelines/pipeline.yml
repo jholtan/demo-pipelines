@@ -44,4 +44,4 @@ spec:
         name: maven-get-project-version
       workspaces:
         - name: source
-          workspace: source-dir
+          workspace: shared-data
