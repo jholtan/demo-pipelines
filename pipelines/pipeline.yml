@@ -23,3 +23,25 @@ spec:
       params:
         - name: url
           value: ${params.repo-url}
+    - name: run-tests
+      params:
+        - name: GOALS
+          value:
+            - test
+      runAfter:
+        - checkout
+      taskRef:
+        name: maven
+      workspaces:
+        - name: source
+          workspace: shared-data
+        - name: maven-settings
+          workspace: shared-data
+    - name: get-version
+      runAfter:
+        - run-tests
+      taskRef:
+        name: maven-get-project-version
+      workspaces:
+        - name: source
+          workspace: source-dir
