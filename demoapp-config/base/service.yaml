@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-application
+spec:
+  selector:
+    app: my-application
+  type: ClusterIP
+  ports:
+  - name: my-application
+    protocol: TCP
+    port: 80
+    targetPort: 8080
+---
+
